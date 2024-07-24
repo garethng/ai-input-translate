@@ -1,26 +1,12 @@
-import { useState } from "react"
+import React from 'react';
+import { Card, Button } from '@nextui-org/react';
 
-function IndexPopup() {
-  const [data, setData] = useState("")
-
+const Popup = () => {
   return (
-    <div
-      style={{
-        padding: 16
-      }}>
-      <h2>
-        Welcome to your{" "}
-        <a href="https://www.plasmo.com" target="_blank">
-          Plasmo
-        </a>{" "}
-        Extension!
-      </h2>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-      <a href="https://docs.plasmo.com" target="_blank">
-        View Docs
-      </a>
-    </div>
-  )
-}
-
-export default IndexPopup
+    <Card>
+      <h1>AI Input Translator</h1>
+      <Button variant="primary">Click Me</Button>
+    </Card>
+  );
+};
+export default Popup;
