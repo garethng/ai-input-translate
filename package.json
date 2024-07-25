@@ -1,8 +1,8 @@
 {
   "name": "ai-input-translate",
   "displayName": "__MSG_extensionName__",
-  "version": "0.0.1",
-  "description": "Auto Translate Text In Input with AI",
+  "version": "0.0.2",
+  "description": "AI-Powered Input Box Language Conversion",
   "author": "GarethNg<wu.qingzhe@outlook.com>",
   "scripts": {
     "dev": "plasmo dev",
