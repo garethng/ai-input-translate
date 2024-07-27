@@ -1,6 +1,6 @@
 {
   "name": "ai-input-translate",
-  "displayName": "Ai input translate",
+  "displayName": "__MSG_extensionName__",
   "version": "0.0.1",
   "description": "Auto Translate Text In Input with AI",
   "author": "GarethNg<wu.qingzhe@outlook.com>",
@@ -31,6 +31,7 @@
   "manifest": {
     "host_permissions": [
       "https://*/*"
-    ]
+    ],
+    "default_locale": "en"
   }
 }

@@ -1,0 +1,35 @@
+{
+    "locale_en":{
+        "message": "Englisch"
+    },
+    "locale_de":{
+        "message":"Deutsch"
+    },
+    "locale_es":{
+        "message":"Spanisch"
+    },
+    "locale_fr":{
+        "message": "Französisch"
+    },
+    "locale_it":{
+        "message":"Italienisch"
+    },
+    "locale_ja":{
+        "message":"Japanisch"
+    },
+    "locale_ko":{
+        "message":"Koreanisch"
+    },
+    "locale_pt":{
+        "message":"Portugiesisch"
+    },
+    "locale_pt_BR":{
+        "message":"Portugiesisch (Brasilien)"
+    },
+    "locale_zh_CN":{
+        "message":"Vereinfachtes Chinesisch"
+    },
+    "locale_zh_TW":{
+        "message":"Traditionelles Chinesisch"
+    }
+}
