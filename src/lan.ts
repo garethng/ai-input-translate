@@ -1,4 +1,4 @@
-export const lan = [
+ const lan = [
   { key: "en", label: `${chrome.i18n.getMessage("locale_en")}(English)` },
   { key: "de", label: `${chrome.i18n.getMessage("locale_de")}(Deutsch)` },
   { key: "es", label: `${chrome.i18n.getMessage("locale_es")}(Español)` },
@@ -9,5 +9,21 @@ export const lan = [
   { key: "pt", label: `${chrome.i18n.getMessage("locale_pt")}(Português)` },
   { key: "pt_BR", label: `${chrome.i18n.getMessage("locale_pt_BR")}(Português (Brasil))` },
   { key: "zh_CN", label: `${chrome.i18n.getMessage("locale_zh_CN")}(简体中文)` },
-  { key: "zh_TW", label: `${chrome.i18n.getMessage("locale_zh_TW")}(繁体中文)` } 
+  { key: "zh_TW", label: `${chrome.i18n.getMessage("locale_zh_TW")}(繁体中文)` },
 ]
+
+const lan_eng = {
+  "en": "English",
+  "de": "German",
+  "es": "Spanish",
+  "fr": "French",
+  "it": "Italian",
+  "ja": "Japanese",
+  "ko": "Korean",
+  "pt": "Portuguese",
+  "pt_BR": "Portuguese (Brazil)",
+  "zh_CN": "Simplified Chinese",
+  "zh_TW": "Traditional Chinese"
+}
+
+export { lan, lan_eng };

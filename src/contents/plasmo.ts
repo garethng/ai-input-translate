@@ -1,20 +1,13 @@
-import type { PlasmoCSConfig } from "plasmo"
- 
-export const config: PlasmoCSConfig = {
-  matches: ["<all_urls>"],
-  all_frames: true
-}
-
 let spaceCount = 0;
 
+function focusin(event: Event) {
 
-function focusin(event:Event) {
     let target: HTMLElement = event.target as HTMLElement
-    if (target.tagName === 'TEXTAREA' || (target.tagName === 'INPUT' &&  ["text", "search"].includes((target as HTMLInputElement).type)) || (target.tagName === 'DIV' && target.getAttribute('data-text-input') === 'true') || target.getAttribute("contenteditable") === 'true') {
-        if (target.dataset.listenerAdded) { 
+    if (target.tagName === 'TEXTAREA' || (target.tagName === 'INPUT' && ["text", "search"].includes((target as HTMLInputElement).type)) || (target.tagName === 'DIV' && target.getAttribute('data-text-input') === 'true') || target.getAttribute("contenteditable") === 'true') {
+        if (target.dataset.listenerAdded) {
             return
         }
-        
+
         target.dataset.listenerAdded = 'true';
         target.addEventListener('keydown', function (event) {
             if (event.key === ' ') {
@@ -26,7 +19,7 @@ function focusin(event:Event) {
                     // 移除多输入的三个空格
                     let textToTranslate = target.tagName === 'DIV' ? target.innerText : (target as HTMLInputElement).value;
 
-                    let targetLanguage = "English";
+                    
 
                     // 显示动态等待符号
                     let originalText = textToTranslate;
@@ -44,7 +37,6 @@ function focusin(event:Event) {
                     if (chrome && chrome.runtime && chrome.runtime.sendMessage) {
                         chrome.runtime.sendMessage({
                             text: textToTranslate,
-                            targetLanguage: targetLanguage
                         }, function (response) {
                             // 停止动态等待符号
                             clearInterval(interval);
@@ -72,6 +64,7 @@ function focusin(event:Event) {
                                 }
                             }
                         });
+
                     } else {
                         console.error("chrome.runtime.sendMessage is not available");
                     }
@@ -84,4 +77,4 @@ function focusin(event:Event) {
     }
 }
 
-document.addEventListener("focusin",focusin)
+document.addEventListener("focusin", focusin)

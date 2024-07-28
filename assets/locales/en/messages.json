@@ -1,4 +1,8 @@
 {
+    "extensionName": {
+        "message": "Translator - AI Input Pilot",
+        "description": "Name of the extension."
+      },
     "locale_en":{
         "message": "English"
     },

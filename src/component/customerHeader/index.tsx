@@ -6,8 +6,7 @@ export function Header() {
   const [isLogIn, setIsLogIn] = useStorage<boolean>("isLogIn")
   const [avatar_src, setAvatar] = useState("")
   useEffect(() => {
-    setAvatar(get_avatar(isLogIn))
-    
+    setAvatar(get_avatar(isLogIn)) 
   })
   
   function get_avatar(is_login: boolean) {

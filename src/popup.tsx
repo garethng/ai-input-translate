@@ -5,7 +5,7 @@ import {lan} from "./lan"
 import React from "react";
 
 import {Header} from "./component/customerHeader/index"
-
+import { useStorage } from "@plasmohq/storage/hook"
 
 function get_basic_info()  {
   var manifest = chrome.runtime.getManifest();
@@ -22,31 +22,19 @@ function get_basic_info()  {
 
 
 function IndexPopup() {
-  const [source_label, setValueSourceLable] = useState("");
+
+  const [target_lan, setSourceLanValue] = useStorage("target_lan")
 
   var basic_info = get_basic_info() 
-
-  const browserLanguage = navigator.language;
-  var sourceDefaultKey = "";
-  var targetDefaultKey = "en";
  
-  var sourceDefaultKey = browserLanguage.replace("-", "_");
   
-  const handleSelectionChange = () => {
-    setValueSourceLable("Source")
+  function handleSourceSelectionChange(keys: { anchorKey?: string; currentKey?: string }) {
+    setSourceLanValue(keys.currentKey)
   }
 
-  React.useEffect(() => {
-    if (chrome.i18n.getMessage(`locale_${sourceDefaultKey}`)) {
-      setValueSourceLable("Auto Detect");
-    } else {
-      setValueSourceLable("Source");
-    }
-
-    return () => {
-    };
-  }, []);
-  
+  useEffect(() => {
+    
+  }, [target_lan]);
 
   return (
     <div className="h-[492px] w-[323px]">
@@ -57,38 +45,21 @@ function IndexPopup() {
         </CardHeader>
         <Divider/>
           <CardBody>
-            <div className="h-[63px] flex w-full justify-center items-center">
-              <Select
+          <Select
               items={lan}
-              label={source_label}
+              label="Target Language"
               placeholder="Choose Source Language"
-              className="h-[55px] flex-auto max-w-[45%]"
+              className="h-[55px] flex-auto w-full"
               fullWidth={false}
-              defaultSelectedKeys={[sourceDefaultKey]}
-              onSelectionChange={handleSelectionChange}
+              selectedKeys={[target_lan]}
+              scrollShadowProps={{
+                isEnabled: false
+              }}
+              onSelectionChange={handleSourceSelectionChange}
               disallowEmptySelection={true}
               >
                 {(lan) => <SelectItem key={lan.key}>{lan.label}</SelectItem>}
               </Select>
-              <div className="w-4 h-4">
-              <Image
-                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguNzEwMjMgMTMuMzg3NkwxMy4yODkzIDguODA4NkwxNC4wOTc3IDguMDAwMjJMMTMuMjg5NyA3LjE5MjIyTDguNzEwMjMgMi42MTI3OUw3LjkwMjIzIDMuNDIwNzlMMTEuOTA5NSA3LjQyODc5SDEuOTA1NjZWOC41NzE2NUgxMS45MDk1TDcuOTAxODUgMTIuNTc5M0w4LjcxMDIzIDEzLjM4NzZaIiBmaWxsPSIjODM4MzgzIi8+CjwvZz4KPC9zdmc+Cg=="
-                  height={16}
-                  width={16}/>
-              </div>
-                
-              <Select
-                items={lan}
-                label="Target"
-                placeholder="Choose Target Language"
-                className="h-[55px] flex-auto max-w-[45%]"
-                defaultSelectedKeys={[targetDefaultKey]}
-                disallowEmptySelection={true}
-              >
-                {(lan) => <SelectItem key={lan.key}>{lan.label}</SelectItem>}
-              </Select> 
-            </div>
-        
         </CardBody>
         <Divider/>
         <CardFooter>
