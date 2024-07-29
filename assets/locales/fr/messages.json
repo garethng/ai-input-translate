@@ -31,5 +31,8 @@
     },
     "locale_zh_TW":{
         "message":"Chinois traditionnel"
+    },
+    "trigger_button":{
+        "message": "espace"
     }
 }

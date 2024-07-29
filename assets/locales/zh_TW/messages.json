@@ -31,5 +31,8 @@
     },
     "locale_zh_TW": {
         "message": "繁体中文"
+    },
+    "trigger_button":{
+        "message": "espaço"
     }
 }

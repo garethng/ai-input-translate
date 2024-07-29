@@ -31,5 +31,8 @@
     },
     "locale_zh_TW":{
         "message":"중국어 (번체)"
+    },
+    "trigger_button":{
+        "message": "스페이스"
     }
 }

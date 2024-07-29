@@ -31,5 +31,8 @@
     },
     "locale_zh_TW":{
         "message":"繁体字中国語"
+    },
+    "trigger_button":{
+        "message": "スペース"
     }
 }

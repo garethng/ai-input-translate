@@ -26,4 +26,12 @@ const lan_eng = {
   "zh_TW": "Traditional Chinese"
 }
 
-export { lan, lan_eng };
+
+const TRIGGER_BUTTON = [
+  { key: `<${chrome.i18n.getMessage("trigger_button")}>`, actual_value: " " },
+  { key: "/", actual_value: "/" },
+  { key: "=", actual_value: "=" },
+  { key: ";", actual_value: ";" }
+]
+
+export { lan, lan_eng, TRIGGER_BUTTON };

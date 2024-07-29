@@ -1,4 +1,13 @@
 let spaceCount = 0;
+let trigger_btn = " "
+chrome.storage.local.get("trigger_btn", function (data) {
+    trigger_btn = data.trigger_btn
+    if (data.trigger_btn === `${chrome.i18n.getMessage("trigger_button")}`) {
+        trigger_btn = " "
+    }
+    
+});
+
 
 function focusin(event: Event) {
 
@@ -10,7 +19,7 @@ function focusin(event: Event) {
 
         target.dataset.listenerAdded = 'true';
         target.addEventListener('keydown', function (event) {
-            if (event.key === ' ') {
+            if (event.key === trigger_btn) {
                 spaceCount++;
                 if (spaceCount === 3) {
                     // 重置空格计数

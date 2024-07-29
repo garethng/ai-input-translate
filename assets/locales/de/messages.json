@@ -31,5 +31,8 @@
     },
     "locale_zh_TW":{
         "message":"Traditionelles Chinesisch"
+    },
+    "trigger_button":{
+        "message": "Leertaste"
     }
 }

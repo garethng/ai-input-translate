@@ -1,7 +1,7 @@
 import "~style.css"
 import { useEffect, useState } from "react"
 import {Select, SelectItem, Card, CardFooter,CardHeader, CardBody, Divider, Link, Image,Avatar,Button} from "@nextui-org/react";
-import {lan} from "./lan"
+import {lan, TRIGGER_BUTTON} from "./lan"
 import React from "react";
 
 import {Header} from "./component/customerHeader/index"
@@ -20,21 +20,29 @@ function get_basic_info()  {
   }
 }
 
+let desp = `Quickly press the ${chrome.i18n.getMessage('trigger_button')} bar 3 times to start translating.`
 
 function IndexPopup() {
 
   const [target_lan, setSourceLanValue] = useStorage("target_lan")
+  const [trigger_button, setTriggerButton] = useStorage("trigger_button")
 
   var basic_info = get_basic_info() 
- 
   
   function handleSourceSelectionChange(keys: { anchorKey?: string; currentKey?: string }) {
     setSourceLanValue(keys.currentKey)
   }
 
+  function handleSelectTriggerButton(keys: { anchorKey?: string; currentKey?: string }) {
+    setTriggerButton(keys.currentKey)
+  }
+
   useEffect(() => {
-    
-  }, [target_lan]);
+    if (!trigger_button) {
+      setTriggerButton(`${chrome.i18n.getMessage("trigger_button")}`)
+    } 
+    desp = `Quickly press the ${chrome.i18n.getMessage('trigger_button')} bar 3 times to start translating.`
+  }, [target_lan, trigger_button]);
 
   return (
     <div className="h-[492px] w-[323px]">
@@ -59,9 +67,25 @@ function IndexPopup() {
               disallowEmptySelection={true}
               >
                 {(lan) => <SelectItem key={lan.key}>{lan.label}</SelectItem>}
+          </Select>
+          <Select
+              items={TRIGGER_BUTTON}
+              label="Trigger Button"
+              className="h-[55px] flex-auto w-full"
+              fullWidth={false}
+              description={desp}
+              selectedKeys={[trigger_button]}
+              scrollShadowProps={{
+                isEnabled: false
+              }}
+              onSelectionChange={handleSelectTriggerButton}
+              disallowEmptySelection={true}
+              >
+                {(TRIGGER_BUTTON) => <SelectItem key={TRIGGER_BUTTON.key}>{TRIGGER_BUTTON.key}</SelectItem>}
               </Select>
         </CardBody>
-        <Divider/>
+        <Divider />
+        
         <CardFooter>
           
           <div className="flex flex-col">
