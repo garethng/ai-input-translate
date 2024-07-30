@@ -1,12 +1,46 @@
-let spaceCount = 0;
+import { Storage } from "@plasmohq/storage"
+
+
 let trigger_btn = " "
-chrome.storage.local.get("trigger_btn", function (data) {
-    trigger_btn = data.trigger_btn
-    if (data.trigger_btn === `${chrome.i18n.getMessage("trigger_button")}`) {
-        trigger_btn = " "
-    }
+const TRIGGER_BUTTON = [
+    { key: "space", actual_value: `${chrome.i18n.getMessage("trigger_button")}` },
+    { key: "backslash", actual_value: "/" },
+    { key: "equal", actual_value: "=" },
+    { key: "semicolon", actual_value: ";" }
+  ]
+const storage = new Storage()
+
+window.addEventListener("load", (event) => {
+    document.addEventListener("focusin", focusin)   
+    storage.get("trigger_button").then(result => {
+        for (var i in [0,1,2,3]) {
+            if (TRIGGER_BUTTON[i].key === result) {
+                if (result === "space") {
+                  trigger_btn = " "
+                } else {
+                    trigger_btn = TRIGGER_BUTTON[i].actual_value
+              }
+            }
+          }
+    })
     
-});
+    storage.watch({
+        "trigger_button": (result) => {
+            for (var i in [0,1,2,3]) {
+                if (TRIGGER_BUTTON[i].key === result.newValue) {
+                    if (result.newValue === "space") {
+                      trigger_btn = " "
+                    } else {
+                        trigger_btn = TRIGGER_BUTTON[i].actual_value
+                  }
+                }
+              }
+        }
+    })
+    
+  });
+
+let spaceCount = 0;
 
 
 function focusin(event: Event) {
@@ -19,6 +53,7 @@ function focusin(event: Event) {
 
         target.dataset.listenerAdded = 'true';
         target.addEventListener('keydown', function (event) {
+            
             if (event.key === trigger_btn) {
                 spaceCount++;
                 if (spaceCount === 3) {
@@ -27,9 +62,10 @@ function focusin(event: Event) {
 
                     // 移除多输入的三个空格
                     let textToTranslate = target.tagName === 'DIV' ? target.innerText : (target as HTMLInputElement).value;
-
+                    if (trigger_btn !== " ") {
+                        textToTranslate = textToTranslate.slice(0,-2)
+                    }
                     
-
                     // 显示动态等待符号
                     let originalText = textToTranslate;
                     let dotCount = 0;
@@ -85,5 +121,3 @@ function focusin(event: Event) {
         });
     }
 }
-
-document.addEventListener("focusin", focusin)

@@ -20,13 +20,12 @@ function get_basic_info()  {
   }
 }
 
-let desp = `Quickly press the ${chrome.i18n.getMessage('trigger_button')} bar 3 times to start translating.`
-
+const tb = TRIGGER_BUTTON
 function IndexPopup() {
 
   const [target_lan, setSourceLanValue] = useStorage("target_lan")
   const [trigger_button, setTriggerButton] = useStorage("trigger_button")
-
+  const [desp, setDesp] = useState("")
   var basic_info = get_basic_info() 
   
   function handleSourceSelectionChange(keys: { anchorKey?: string; currentKey?: string }) {
@@ -35,14 +34,21 @@ function IndexPopup() {
 
   function handleSelectTriggerButton(keys: { anchorKey?: string; currentKey?: string }) {
     setTriggerButton(keys.currentKey)
+
+    for (var i in [0,1,2,3]) {
+      if (tb[i].key === keys.currentKey) {
+        setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+      }
+    }
   }
 
   useEffect(() => {
-    if (!trigger_button) {
-      setTriggerButton(`${chrome.i18n.getMessage("trigger_button")}`)
-    } 
-    desp = `Quickly press the ${chrome.i18n.getMessage('trigger_button')} bar 3 times to start translating.`
-  }, [target_lan, trigger_button]);
+    for (var i in [0,1,2,3]) {
+      if (tb[i].key === trigger_button) {
+        setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+      }
+    }
+  }, [target_lan, trigger_button, desp]);
 
   return (
     <div className="h-[492px] w-[323px]">
@@ -81,8 +87,9 @@ function IndexPopup() {
               onSelectionChange={handleSelectTriggerButton}
               disallowEmptySelection={true}
               >
-                {(TRIGGER_BUTTON) => <SelectItem key={TRIGGER_BUTTON.key}>{TRIGGER_BUTTON.key}</SelectItem>}
-              </Select>
+                {(TRIGGER_BUTTON) => <SelectItem key={TRIGGER_BUTTON.key}>{TRIGGER_BUTTON.actual_value}</SelectItem>}
+          </Select>
+
         </CardBody>
         <Divider />
         

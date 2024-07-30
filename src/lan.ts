@@ -28,10 +28,10 @@ const lan_eng = {
 
 
 const TRIGGER_BUTTON = [
-  { key: `<${chrome.i18n.getMessage("trigger_button")}>`, actual_value: " " },
-  { key: "/", actual_value: "/" },
-  { key: "=", actual_value: "=" },
-  { key: ";", actual_value: ";" }
+  { key: "space", actual_value: `${chrome.i18n.getMessage("trigger_button")}` },
+  { key: "backslash", actual_value: "/" },
+  { key: "equal", actual_value: "=" },
+  { key: "semicolon", actual_value: ";" }
 ]
 
 export { lan, lan_eng, TRIGGER_BUTTON };

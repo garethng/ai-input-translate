@@ -42,7 +42,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 async function translateWithOpenAI(text: string): Promise<string> {
   const url = 'https://openai.api2d.net/v1/chat/completions';
-  const prompt = `Translate the following text to ${targetLanguage} in a natural and conversational tone. Provide only the translated text without any punctuation marks. If the original text has punctuation marks, please keep them.`;
+  const prompt = `Translate the following source text to {${targetLanguage}}, if the text contains an html tag, keep it. Output translation directly without any additional text.
+  Source Text: {{${text}}}
+  
+  Translated Text:`;
+
+  if (text.length <= 1) {
+    throw new Error("error string");
+  }
 
   const data = {
     "messages": [
