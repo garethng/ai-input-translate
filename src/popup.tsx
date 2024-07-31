@@ -1,7 +1,7 @@
 import "~style.css"
 import { useEffect, useState } from "react"
 import {Select, SelectItem, Card, CardFooter,CardHeader, CardBody, Divider, Link, Image,Avatar,Button} from "@nextui-org/react";
-import {lan, TRIGGER_BUTTON} from "./lan"
+import {lan, TRIGGER_BUTTON, service_name} from "./const"
 import React from "react";
 
 import {Header} from "./component/customerHeader/index"
@@ -25,6 +25,7 @@ function IndexPopup() {
 
   const [target_lan, setSourceLanValue] = useStorage("target_lan")
   const [trigger_button, setTriggerButton] = useStorage("trigger_button")
+  const [translate_engine, setTranslateEngine] = useStorage("translate_engine")
   const [desp, setDesp] = useState("")
   var basic_info = get_basic_info() 
   
@@ -42,13 +43,17 @@ function IndexPopup() {
     }
   }
 
+  function handlerTranslateEngine(keys: { anchorKey?: string; currentKey?: string }) {
+    setTranslateEngine(keys.currentKey)
+  }
+
   useEffect(() => {
     for (var i in [0,1,2,3]) {
       if (tb[i].key === trigger_button) {
         setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
       }
     }
-  }, [target_lan, trigger_button, desp]);
+  }, [target_lan, trigger_button, desp, translate_engine]);
 
   return (
     <div className="h-[492px] w-[323px]">
@@ -88,6 +93,20 @@ function IndexPopup() {
               disallowEmptySelection={true}
               >
                 {(TRIGGER_BUTTON) => <SelectItem key={TRIGGER_BUTTON.key}>{TRIGGER_BUTTON.actual_value}</SelectItem>}
+          </Select>
+          <Select
+              items={service_name}
+              label="Translation Service"
+              className="h-[55px] flex-auto w-full"
+              fullWidth={false}
+              selectedKeys={[translate_engine]}
+              scrollShadowProps={{
+                isEnabled: false
+              }}
+              onSelectionChange={handlerTranslateEngine}
+              disallowEmptySelection={true}
+              >
+                {(service_name) => <SelectItem key={service_name.key}>{service_name.label}</SelectItem>}
           </Select>
 
         </CardBody>

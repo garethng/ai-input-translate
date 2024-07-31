@@ -5,26 +5,34 @@ import {
 
 import {
   lan_eng
-} from "~lan"
+} from "~const"
 
+import { translate,translate_service_type } from "~utils/translate"
 
-const apiKey = process.env.PLASMO_PUBLIC_OPENAI_API_KEY;
 var targetLanguage = "" 
-
+var trs_service = ""
 const storage = new Storage()
 storage.watch({
   "target_lan": (target_lan) => {
-    targetLanguage =  lan_eng[target_lan.newValue]
+    targetLanguage =  target_lan.newValue
   },
+  "translate_engine": (s) => {
+    trs_service = s.newValue
+  } 
 })
 
+
 storage.get("target_lan").then(target_lan => {
-  targetLanguage =  lan_eng[target_lan]
+  targetLanguage =  target_lan
+})
+
+storage.get("translate_engine").then(s => {
+  trs_service = s
 })
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.text) {
-    translateWithOpenAI(request.text)
+    translate(translate_service_type[trs_service] ,request.text,targetLanguage)
       .then((translatedText) => {
         sendResponse({ translatedText: translatedText });
       })
@@ -39,42 +47,3 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true;
   }
 });
-
-async function translateWithOpenAI(text: string): Promise<string> {
-  const url = 'https://openai.api2d.net/v1/chat/completions';
-  const prompt = `Translate the following source text to {${targetLanguage}}, if the text contains an html tag, keep it. Output translation directly without any additional text.
-  Source Text: {{${text}}}
-  
-  Translated Text:`;
-
-  if (text.length <= 1) {
-    throw new Error("error string");
-  }
-
-  const data = {
-    "messages": [
-      { "role": "system", "content": prompt },
-      { "role": "user", "content": text }
-    ],
-    "model": "gpt-3.5-turbo",
-    "temperature": 0.3
-  };
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
-    },
-    body: JSON.stringify(data)
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const responseData = await response.json();
-  const translatedText = responseData.choices[0].message.content.trim();
-
-  return translatedText;
-}
