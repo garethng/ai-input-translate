@@ -1,5 +1,5 @@
 import { google_translate } from "./translator/google_translator";
-
+import { bing_translate } from "./translator/bing_translator";
 abstract class Translate_service { 
     constructor() {
     }
@@ -61,9 +61,20 @@ class Translate_service_google_translate extends Translate_service{
     }
 }
 
+class Translate_service_bing_translate extends Translate_service{
+    override async translate_text(input: string, targetLanguage: string) {
+        try {
+            return await bing_translate(input, targetLanguage)
+        } catch (exception) {
+            throw new Error(`ERROR received: ${exception}\n`);
+        } 
+    }
+}
+
 enum translate_service_type {
     openai="openai",
-    gtr="gtr"
+    gtr = "gtr",
+    bing = "bing"
   }
 
 function translate(service: translate_service_type, input: string, targetLanguage: string) {
@@ -75,6 +86,8 @@ function translate(service: translate_service_type, input: string, targetLanguag
         case translate_service_type.gtr:
             client = new Translate_service_google_translate()
             break;
+        case translate_service_type.bing:
+            client = new Translate_service_bing_translate()
     }
     return client.translate_text(input, targetLanguage)
 }
