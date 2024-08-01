@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.text) {
     translate(translate_service_type[trs_service] ,request.text,targetLanguage)
       .then((translatedText) => {
-        sendResponse({ translatedText: translatedText });
+        sendResponse({ translatedText: translatedText.text });
       })
       .catch((error) => {
         console.error("Translation error:", error);
