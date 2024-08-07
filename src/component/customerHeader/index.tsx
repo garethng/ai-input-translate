@@ -11,9 +11,9 @@ export function Header() {
   
   function get_avatar(is_login: boolean) {
     if (is_login) {
-      return chrome.runtime.getURL("/assets/avatar_login.png");
+      return chrome.runtime.getURL("/assets/icon.png");
     } else {
-      return chrome.runtime.getURL("/assets/avatar_signoff.png");
+      return chrome.runtime.getURL("/assets/icon.png");
     }
   }
 
@@ -24,7 +24,7 @@ export function Header() {
   return (
         <div className="flex gap-5 justify-center items-center">
           <Avatar isBordered radius="full" size="md" src={avatar_src} />
-            <div className="flex flex-col gap-1 items-start justify-center">
+            {/* <div className="flex flex-col gap-1 items-start justify-center">
               <h4 className="text-small font-semibold leading-none text-default-600">Gareth Ng</h4>
               <h5 className="text-small tracking-tight text-default-400">Pro</h5>
             </div>
@@ -37,7 +37,7 @@ export function Header() {
         onPress={() => onPress(!isLogIn)}
             >
             {isLogIn ? "Sign Off" : "Login"}
-          </Button>
+          </Button> */}
         </div>
     )
 }

@@ -10,8 +10,8 @@ class Translate_service_openai extends Translate_service{
     override async translate_text(input: string, targetLanguage: string) {
         const apiKey = process.env.PLASMO_PUBLIC_OPENAI_API_KEY;
         const url = 'https://openai.api2d.net/v1/chat/completions';
-        const prompt = `Translate the following source input to {${targetLanguage}}, if the input contains an html tag, keep it. Output translation directly without any additional input.
-        Source Text: {{${input}}}
+        const prompt = `ou are a highly skilled translator tasked with translating various types of content from other languages into ${targetLanguage}, help me complete the translation task. Output translation directly without any additional input.
+        Source Text: ${input}
         
         Translated Text:`;
 
