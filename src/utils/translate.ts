@@ -10,10 +10,7 @@ class Translate_service_openai extends Translate_service{
     override async translate_text(input: string, targetLanguage: string) {
         const apiKey = process.env.PLASMO_PUBLIC_OPENAI_API_KEY;
         const url = 'https://openai.api2d.net/v1/chat/completions';
-        const prompt = `ou are a highly skilled translator tasked with translating various types of content from other languages into ${targetLanguage}, help me complete the translation task. Output translation directly without any additional input.
-        Source Text: ${input}
-        
-        Translated Text:`;
+        const prompt = `You are a highly skilled translator tasked with translating various types of content from other languages into ${targetLanguage}, help me complete the translation task. Output translation directly without any additional input.`;
 
         if (input.length <= 1) {
             throw new Error("error string");
@@ -64,7 +61,7 @@ class Translate_service_google_translate extends Translate_service{
 class Translate_service_bing_translate extends Translate_service{
     override async translate_text(input: string, targetLanguage: string) {
         try {
-            return await bing_translate(input, targetLanguage)
+            return await bing_translate(input, {to: targetLanguage})
         } catch (exception) {
             throw new Error(`ERROR received: ${exception}\n`);
         } 
