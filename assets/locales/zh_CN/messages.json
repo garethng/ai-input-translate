@@ -1,39 +1,42 @@
 {
-    "extensionName": {
-        "message": "文本框翻译助手",
-        "description": "Name of the extension."
-      },
-    "locale_en":{
-        "message": "英语"
-    },
-    "locale_de":{
-        "message":"德语"
-    },
-    "locale_es":{
-        "message":"西班牙语"
-    },
-    "locale_fr":{
-        "message": "法语"
-    },
-    "locale_it":{
-        "message":"意大利语"
-    },
-    "locale_ja":{
-        "message":"日语"
-    },
-    "locale_ko":{
-        "message":"韩语"
-    },
-    "locale_pt":{
-        "message":"葡萄牙语"
-    },
-    "locale_pt_BR":{
-        "message":"葡萄牙语（巴西）"
-    },
-    "locale_zh_CN":{
-        "message":"简体中文"
-    },
-    "locale_zh_TW":{
-        "message":"繁体中文"
-    }
+  "extensionName": {
+    "message": "Translator - AI助手",
+    "description": "扩展名。"
+  },
+  "locale_en": {
+    "message": "英语"
+  },
+  "locale_de": {
+    "message": "德语"
+  },
+  "locale_es": {
+    "message": "西班牙语"
+  },
+  "locale_fr": {
+    "message": "法语"
+  },
+  "locale_it": {
+    "message": "意大利语"
+  },
+  "locale_ja": {
+    "message": "日语"
+  },
+  "locale_ko": {
+    "message": "韩语"
+  },
+  "locale_pt": {
+    "message": "葡萄牙语"
+  },
+  "locale_pt_BR": {
+    "message": "葡萄牙语（巴西）"
+  },
+  "locale_zh_CN": {
+    "message": "简体中文"
+  },
+  "locale_zh_TW": {
+    "message": "繁体中文"
+  },
+  "trigger_button": {
+    "message": "空格键"
+  }
 }

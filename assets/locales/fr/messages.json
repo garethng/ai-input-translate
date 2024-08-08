@@ -1,38 +1,41 @@
 {
-    "locale_en":{
+    "extensionName": {
+        "message": "Traducteur - Pilote d'Entrée IA"
+    },
+    "locale_en": {
         "message": "Anglais"
     },
-    "locale_de":{
-        "message":"Allemand"
+    "locale_de": {
+        "message": "Allemand"
     },
-    "locale_es":{
-        "message":"Espagnol"
+    "locale_es": {
+        "message": "Espagnol"
     },
-    "locale_fr":{
+    "locale_fr": {
         "message": "Français"
     },
-    "locale_it":{
-        "message":"Italien"
+    "locale_it": {
+        "message": "Italien"
     },
-    "locale_ja":{
-        "message":"Japonais"
+    "locale_ja": {
+        "message": "Japonais"
     },
-    "locale_ko":{
-        "message":"Coréen"
+    "locale_ko": {
+        "message": "Coréen"
     },
-    "locale_pt":{
-        "message":"Portugais"
+    "locale_pt": {
+        "message": "Portugais"
     },
-    "locale_pt_BR":{
-        "message":"Portugais (Brésil)"
+    "locale_pt_BR": {
+        "message": "Portugais (Brésil)"
     },
-    "locale_zh_CN":{
-        "message":"Chinois simplifié"
+    "locale_zh_CN": {
+        "message": "Chinois simplifié"
     },
-    "locale_zh_TW":{
-        "message":"Chinois traditionnel"
+    "locale_zh_TW": {
+        "message": "Chinois traditionnel"
     },
-    "trigger_button":{
-        "message": "espace"
+    "trigger_button": {
+        "message": "barre d'espace"
     }
 }

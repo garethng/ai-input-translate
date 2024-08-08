@@ -1,38 +1,42 @@
 {
-    "locale_en":{
-        "message": "Inglese"
-    },
-    "locale_de":{
-        "message":"Tedesco"
-    },
-    "locale_es":{
-        "message":"Spagnolo"
-    },
-    "locale_fr":{
-        "message": "Francese"
-    },
-    "locale_it":{
-        "message":"Italiano"
-    },
-    "locale_ja":{
-        "message":"Giapponese"
-    },
-    "locale_ko":{
-        "message":"Coreano"
-    },
-    "locale_pt":{
-        "message":"Portoghese"
-    },
-    "locale_pt_BR":{
-        "message":"Portoghese (Brasile)"
-    },
-    "locale_zh_CN":{
-        "message":"Cinese semplificato"
-    },
-    "locale_zh_TW":{
-        "message":"Cinese tradizionale"
-    },
-    "trigger_button":{
-        "message": "spazio"
-    }
+  "extensionName": {
+    "message": "Traduttore - Pilota di Input AI",
+    "description": "Nome dell'estensione."
+  },
+  "locale_en": {
+    "message": "Inglese"
+  },
+  "locale_de": {
+    "message": "Tedesco"
+  },
+  "locale_es": {
+    "message": "Spagnolo"
+  },
+  "locale_fr": {
+    "message": "Français"
+  },
+  "locale_it": {
+    "message": "Italiano"
+  },
+  "locale_ja": {
+    "message": "Giapponese"
+  },
+  "locale_ko": {
+    "message": "Coreano"
+  },
+  "locale_pt": {
+    "message": "Portoghese"
+  },
+  "locale_pt_BR": {
+    "message": "Portoghese (Brasile)"
+  },
+  "locale_zh_CN": {
+    "message": "Cinese semplificato"
+  },
+  "locale_zh_TW": {
+    "message": "Cinese tradizionale"
+  },
+  "trigger_button": {
+    "message": "barra spaziatrice"
+  }
 }

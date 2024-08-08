@@ -1,38 +1,41 @@
 {
-    "locale_en":{
+    "extensionName": {
+        "message": "Traductor - Piloto de Entrada de IA"
+    },
+    "locale_en": {
         "message": "Inglés"
     },
-    "locale_de":{
-        "message":"Alemán"
+    "locale_de": {
+        "message": "Alemán"
     },
-    "locale_es":{
-        "message":"Español"
+    "locale_es": {
+        "message": "Español"
     },
-    "locale_fr":{
+    "locale_fr": {
         "message": "Francés"
     },
-    "locale_it":{
-        "message":"Italiano"
+    "locale_it": {
+        "message": "Italiano"
     },
-    "locale_ja":{
-        "message":"Japonés"
+    "locale_ja": {
+        "message": "Japonés"
     },
-    "locale_ko":{
-        "message":"Coreano"
+    "locale_ko": {
+        "message": "Coreano"
     },
-    "locale_pt":{
-        "message":"Portugués"
+    "locale_pt": {
+        "message": "Portugués"
     },
-    "locale_pt_BR":{
-        "message":"Portugués (Brasil)"
+    "locale_pt_BR": {
+        "message": "Portugués (Brasil)"
     },
-    "locale_zh_CN":{
-        "message":"Chino Simplificado"
+    "locale_zh_CN": {
+        "message": "Chino simplificado"
     },
-    "locale_zh_TW":{
-        "message":"Chino Tradicional"
+    "locale_zh_TW": {
+        "message": "Chino tradicional"
     },
-    "trigger_button":{
-        "message": "espacio"
+    "trigger_button": {
+        "message": "barra espaciadora"
     }
 }

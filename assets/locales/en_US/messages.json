@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "Input Pilot - AI-Powered Translator",
+        "message": "Translator - AI Input Pilot",
         "description": "Name of the extension."
       },
     "locale_en":{
@@ -37,6 +37,6 @@
         "message":"Traditional Chinese"
     },
     "trigger_button":{
-        "message": "space"
+        "message": "space bar"
     }
 }

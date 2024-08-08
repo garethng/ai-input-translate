@@ -1,38 +1,41 @@
 {
-    "locale_en":{
+    "extensionName": {
+        "message": "翻訳者 - AI入力パイロット"
+    },
+    "locale_en": {
         "message": "英語"
     },
-    "locale_de":{
-        "message":"ドイツ語"
+    "locale_de": {
+        "message": "ドイツ語"
     },
-    "locale_es":{
-        "message":"スペイン語"
+    "locale_es": {
+        "message": "スペイン語"
     },
-    "locale_fr":{
+    "locale_fr": {
         "message": "フランス語"
     },
-    "locale_it":{
-        "message":"イタリア語"
+    "locale_it": {
+        "message": "イタリア語"
     },
-    "locale_ja":{
-        "message":"日本語"
+    "locale_ja": {
+        "message": "日本語"
     },
-    "locale_ko":{
-        "message":"韓国語"
+    "locale_ko": {
+        "message": "韓国語"
     },
-    "locale_pt":{
-        "message":"ポルトガル語"
+    "locale_pt": {
+        "message": "ポルトガル語"
     },
-    "locale_pt_BR":{
-        "message":"ポルトガル語（ブラジル）"
+    "locale_pt_BR": {
+        "message": "ポルトガル語（ブラジル）"
     },
-    "locale_zh_CN":{
-        "message":"簡体字中国語"
+    "locale_zh_CN": {
+        "message": "簡体字中国語"
     },
-    "locale_zh_TW":{
-        "message":"繁体字中国語"
+    "locale_zh_TW": {
+        "message": "繁体字"
     },
-    "trigger_button":{
-        "message": "スペース"
+    "trigger_button": {
+        "message": "スペースバー"
     }
 }
