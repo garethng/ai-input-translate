@@ -36,8 +36,8 @@ const TRIGGER_BUTTON = [
 
 const service_name = [
   { key: "openai", label: "OpenAI" },
-  { key: "gtr", label: "Google Translate" },
-  { key: "bing", label: "Microsoft Translate" }
+  { key: "gtr", label: `${chrome.i18n.getMessage("google_tr")}` },
+  { key: "bing", label: `${chrome.i18n.getMessage("ms_tr")}` }
 ]
 
 export { lan, lan_eng, TRIGGER_BUTTON, service_name };

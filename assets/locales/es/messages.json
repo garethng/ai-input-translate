@@ -1,41 +1,55 @@
 {
-    "extensionName": {
-        "message": "Traductor - Piloto de Entrada de IA"
-    },
-    "locale_en": {
-        "message": "Inglés"
-    },
-    "locale_de": {
-        "message": "Alemán"
-    },
-    "locale_es": {
-        "message": "Español"
-    },
-    "locale_fr": {
-        "message": "Francés"
-    },
-    "locale_it": {
-        "message": "Italiano"
-    },
-    "locale_ja": {
-        "message": "Japonés"
-    },
-    "locale_ko": {
-        "message": "Coreano"
-    },
-    "locale_pt": {
-        "message": "Portugués"
-    },
-    "locale_pt_BR": {
-        "message": "Portugués (Brasil)"
-    },
-    "locale_zh_CN": {
-        "message": "Chino simplificado"
-    },
-    "locale_zh_TW": {
-        "message": "Chino tradicional"
-    },
-    "trigger_button": {
-        "message": "barra espaciadora"
+  "extensionName": {
+    "message": "Traductor - Piloto de Entrada de IA"
+  },
+  "locale_en": {
+    "message": "Inglés"
+  },
+  "locale_de": {
+    "message": "Alemán"
+  },
+  "locale_es": {
+    "message": "Español"
+  },
+  "locale_fr": {
+    "message": "Francés"
+  },
+  "locale_it": {
+    "message": "Italiano"
+  },
+  "locale_ja": {
+    "message": "Japonés"
+  },
+  "locale_ko": {
+    "message": "Coreano"
+  },
+  "locale_pt": {
+    "message": "Portugués"
+  },
+  "locale_pt_BR": {
+    "message": "Portugués (Brasil)"
+  },
+  "locale_zh_CN": {
+    "message": "Chino simplificado"
+  },
+  "locale_zh_TW": {
+    "message": "Chino tradicional"
+  },
+  "trigger_button": {
+    "message": "barra espaciadora"
+  },
+  "button_dsp": {
+    "message": "Presiona rápidamente la $bar$ 3 veces para comenzar a traducir.",
+    "placeholders": {
+      "bar": {
+        "content": "$1"
+      }
     }
+  },
+  "google_tr": {
+    "message": "Google Traductor"
+  },
+  "ms_tr": {
+    "message": "Microsoft Traduce"
+  }
 }

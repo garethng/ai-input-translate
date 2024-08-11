@@ -38,5 +38,19 @@
   },
   "trigger_button": {
     "message": "空格键"
+  },
+  "button_dsp": {
+    "message": "快速按下$bar$3次以开始翻译。",
+    "placeholders": {
+      "bar": {
+        "content": "$1"
+      }
+    }
+  },
+  "google_tr": {
+    "message": "谷歌翻译"
+  },
+  "ms_tr": {
+    "message": "微软翻译"
   }
 }

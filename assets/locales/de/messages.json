@@ -1,41 +1,55 @@
 {
-    "extensionName": {
-        "message": "Übersetzer - KI Eingabe Pilot"
-    },
-    "locale_en": {
-        "message": "Englisch"
-    },
-    "locale_de": {
-        "message": "Deutsch"
-    },
-    "locale_es": {
-        "message": "Spanisch"
-    },
-    "locale_fr": {
-        "message": "Französisch"
-    },
-    "locale_it": {
-        "message": "Italienisch"
-    },
-    "locale_ja": {
-        "message": "Japanisch"
-    },
-    "locale_ko": {
-        "message": "Koreanisch"
-    },
-    "locale_pt": {
-        "message": "Portugiesisch"
-    },
-    "locale_pt_BR": {
-        "message": "Portugiesisch (Brasilien)"
-    },
-    "locale_zh_CN": {
-        "message": "Vereinfachtes Chinesisch"
-    },
-    "locale_zh_TW": {
-        "message": "Traditionelles Chinesisch"
-    },
-    "trigger_button": {
-        "message": "Leertaste"
+  "extensionName": {
+    "message": "Übersetzer - KI Eingabe Pilot"
+  },
+  "locale_en": {
+    "message": "Englisch"
+  },
+  "locale_de": {
+    "message": "Deutsch"
+  },
+  "locale_es": {
+    "message": "Spanisch"
+  },
+  "locale_fr": {
+    "message": "Französisch"
+  },
+  "locale_it": {
+    "message": "Italienisch"
+  },
+  "locale_ja": {
+    "message": "Japanisch"
+  },
+  "locale_ko": {
+    "message": "Koreanisch"
+  },
+  "locale_pt": {
+    "message": "Portugiesisch"
+  },
+  "locale_pt_BR": {
+    "message": "Portugiesisch (Brasilien)"
+  },
+  "locale_zh_CN": {
+    "message": "Vereinfachtes Chinesisch"
+  },
+  "locale_zh_TW": {
+    "message": "Traditionelles Chinesisch"
+  },
+  "trigger_button": {
+    "message": "Leertaste"
+  },
+  "button_dsp": {
+    "message": "Drücken Sie schnell 3 Mal auf die $bar$, um mit der Übersetzung zu beginnen.",
+    "placeholders": {
+      "bar": {
+        "content": "$1"
+      }
     }
+  },
+  "google_tr": {
+    "message": "Google Übersetzer"
+  },
+  "ms_tr": {
+    "message": "Microsoft Übersetzen"
+  }
 }

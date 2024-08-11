@@ -38,5 +38,19 @@
   },
   "trigger_button": {
     "message": "barra spaziatrice"
+  },
+  "button_dsp": {
+    "message": "Premi rapidamente il $bar$ 3 volte per iniziare a tradurre.",
+    "placeholders": {
+      "bar": {
+        "content": "$1"
+      }
+    }
+  },
+  "google_tr": {
+    "message": "Google Traduttore"
+  },
+  "ms_tr": {
+    "message": "Microsoft Traduci"
   }
 }

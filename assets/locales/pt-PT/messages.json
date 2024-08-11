@@ -1,0 +1,55 @@
+{
+  "extensionName": {
+    "message": "Tradutor - Piloto de Entrada de IA"
+  },
+  "locale_en": {
+    "message": "Inglês"
+  },
+  "locale_de": {
+    "message": "Alemão"
+  },
+  "locale_es": {
+    "message": "Espanhol"
+  },
+  "locale_fr": {
+    "message": "Francês"
+  },
+  "locale_it": {
+    "message": "Italiano"
+  },
+  "locale_ja": {
+    "message": "Japonês"
+  },
+  "locale_ko": {
+    "message": "Coreano"
+  },
+  "locale_pt": {
+    "message": "Português"
+  },
+  "locale_pt_BR": {
+    "message": "Português (Brasil)"
+  },
+  "locale_zh_CN": {
+    "message": "Chinês Simplificado"
+  },
+  "locale_zh_TW": {
+    "message": "Chinês Tradicional"
+  },
+  "trigger_button": {
+    "message": "barra de espaço"
+  },
+  "button_dsp": {
+    "message": "Pressione rapidamente a $bar$ 3 vezes para começar a traduzir.",
+    "placeholders": {
+      "bar": {
+        "content": "$1"
+      }
+    }
+  },
+  "google_tr": {
+    "message": "Google Tradutor"
+  },
+  "ms_tr": {
+    "message": "Microsoft Traduzir"
+  }
+}

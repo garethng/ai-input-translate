@@ -38,7 +38,8 @@ function IndexPopup() {
 
     for (var i in [0,1,2,3]) {
       if (tb[i].key === keys.currentKey) {
-        setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+        // setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+        setDesp(`${chrome.i18n.getMessage("button_dsp",[tb[i].actual_value])}`)
       }
     }
   }
@@ -50,7 +51,8 @@ function IndexPopup() {
   useEffect(() => {
     for (var i in [0,1,2,3]) {
       if (tb[i].key === trigger_button) {
-        setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+        // setDesp(`Quickly press the ${tb[i].actual_value} bar 3 times to start translating.`)
+        setDesp(chrome.i18n.getMessage("button_dsp",[tb[i].actual_value]))
       }
     }
   }, [target_lan, trigger_button, desp, translate_engine]);

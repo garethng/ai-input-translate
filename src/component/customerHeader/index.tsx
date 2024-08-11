@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {Avatar,Button} from "@nextui-org/react";
+import {Avatar} from "@nextui-org/react";
 import { useStorage } from "@plasmohq/storage/hook"
 
 export function Header() {
