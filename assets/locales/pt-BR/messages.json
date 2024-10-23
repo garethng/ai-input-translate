@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Tradutor - Piloto de Entrada de IA"
+    "message": "TransBox - Piloto de Entrada de IA"
   },
   "locale_en": {
     "message": "Inglês"
@@ -39,7 +39,12 @@
     "message": "barra de espaço"
   },
   "button_dsp": {
-    "message": "Pressione rapidamente a $bar$ 3 vezes para começar a traduzir."
+    "message": "Pressione rapidamente a $bar$ 3 vezes para começar a traduzir.",
+    "placeholders": {
+      "bar": {
+        "content": "R$1"
+      }
+    }
   },
   "google_tr": {
     "message": "Google Tradutor"
