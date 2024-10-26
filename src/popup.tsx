@@ -7,6 +7,7 @@ import React from "react";
 import {Header} from "./component/customerHeader/index"
 import { useStorage } from "@plasmohq/storage/hook"
 
+
 function get_basic_info()  {
   var manifest = chrome.runtime.getManifest();
   var name = manifest.name;

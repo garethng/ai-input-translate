@@ -8,28 +8,22 @@ abstract class Translate_service {
 
 class Translate_service_openai extends Translate_service{
     override async translate_text(input: string, targetLanguage: string) {
-        const apiKey = process.env.PLASMO_PUBLIC_OPENAI_API_KEY;
-        const url = 'https://openai.api2d.net/v1/chat/completions';
-        const prompt = `You are a highly skilled translator tasked with translating various types of content from other languages into ${targetLanguage}, help me complete the translation task. Output translation directly without any additional input.`;
+        const url = 'https://translate.sfo1.zeabur.app/';
 
-        if (input.length <= 1) {
+        if (input.length < 1) {
             throw new Error("error string");
         }
 
         const data = {
-            "messages": [
-            { "role": "system", "content": prompt },
-            { "role": "user", "content": input }
-            ],
-            "model": "gpt-3.5-turbo",
-            "temperature": 0.3
+            "client_type": 1,
+            "to_translate": input,
+            "target_len": targetLanguage
         };
 
         const response = await fetch(url, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
             },
             body: JSON.stringify(data)
         });
@@ -38,8 +32,8 @@ class Translate_service_openai extends Translate_service{
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const responseData = await response.json();
-        const text = responseData.choices[0].message.content.trim();
+        const responseData = await response.text();
+        const text = responseData.trim();
 
         return {text};
     }
