@@ -8,7 +8,7 @@ abstract class Translate_service {
 
 class Translate_service_openai extends Translate_service{
     override async translate_text(input: string, targetLanguage: string) {
-        const url = 'https://translate.sfo1.zeabur.app/';
+        const url = 'https://translate.garethng.net/';
 
         if (input.length < 1) {
             throw new Error("error string");
