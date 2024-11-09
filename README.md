@@ -1,33 +1,104 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# AI Input Translator
+A browser extension that provides instant text translation with multiple translation services, built with [Plasmo Framework](https://docs.plasmo.com/).
 
-## Getting Started
+## Features
+- Multiple translation service providers (OpenAI, Google Translate, Bing Translate)
+- Customizable trigger button (quick triple-press activation)
+- User authentication with Firebase
+- Multiple target language support
+- Persistent settings storage
+- Clean, modern UI with NextUI components
 
-First, run the development server:
+## Installation
 
+### From Web Store
+<!-- Add store links once published -->
+- [Chrome Web Store]()
+- [Firefox Add-ons]()
+- [Edge Add-ons]()
+
+### Local Development
+1. Clone the repository
 ```bash
-pnpm dev
+git clone <your-repo-url>
+cd <project-directory>
+```
+
+2. Configure Firebase
+- Create a Firebase project
+- Add your Firebase configuration to environment variables:
+```env
+PLASMO_PUBLIC_FIREBASE_PUBLIC_API_KEY=
+PLASMO_PUBLIC_FIREBASE_AUTH_DOMAIN=
+PLASMO_PUBLIC_FIREBASE_PROJECT_ID=
+PLASMO_PUBLIC_FIREBASE_STORAGE_BUCKET=
+PLASMO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+PLASMO_PUBLIC_FIREBASE_APP_ID=
+PLASMO_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
+
+3. Install dependencies
+```bash
+npm install
 # or
+pnpm install
+```
+
+4. Start the development server
+```bash
 npm run dev
-```
-
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
-
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
-
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
-
-## Making production build
-
-Run the following:
-
-```bash
-pnpm build
 # or
-npm run build
+pnpm dev
 ```
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
+5. Load the extension
+- Chrome/Edge
+  - Go to `chrome://extensions/`
+  - Enable "Developer mode"
+  - Click "Load unpacked"
+  - Select the `build/chrome-mv3-dev` directory
+- Firefox
+  - Go to `about:debugging#/runtime/this-firefox`
+  - Click "Load Temporary Add-on"
+  - Select any file in the `build/firefox-mv2-dev` directory
 
-## Submit to the webstores
+## Usage
+1. Sign in using the options page
+2. Configure your preferences in the popup:
+   - Select target language
+   - Choose trigger button (Alt, Ctrl, Shift, or Space)
+   - Select translation service (OpenAI, Google Translate, or Bing)
+3. Triple-press your chosen trigger button to activate translation
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+## Development
+
+### Key Files
+- `popup.tsx`: Extension popup UI and settings
+- `background.ts`: Background service worker for translation
+- `utils/translate.ts`: Translation service implementations
+- `utils/auth/`: Firebase authentication utilities
+- `component/AuthForm.tsx`: User authentication UI
+
+### Building for Production
+```bash
+npm run build
+# or
+pnpm build
+```
+
+Production files will be created in the `build` directory.
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+[Add your chosen license]
+
+## Acknowledgments
+- Built with [Plasmo Framework](https://docs.plasmo.com/)
+- UI components from [NextUI](https://nextui.org/)
+- Authentication by [Firebase](https://firebase.google.com/)
+- Translation services:
+  - OpenAI
+  - Google Translate
+  - Bing Translate
